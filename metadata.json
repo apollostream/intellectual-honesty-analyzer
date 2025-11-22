@@ -1,0 +1,5 @@
+{
+  "name": "Intellectual Honesty Analyzer",
+  "description": "An interactive tool that rigorously critiques news articles and topics using Bayesian process tracing and hermeneutic principles.",
+  "requestFramePermissions": []
+}
