@@ -357,7 +357,7 @@ export const analyzeTopic = async (input: string): Promise<AnalysisReport> => {
   
   try {
       const researchResponse = await generateWithRetry(() => ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-2.5-pro",
         contents: `Perform a comprehensive intellectual honesty analysis on the following topic: "${input}"`, 
         config: {
           systemInstruction: researchSystemPrompt,
@@ -507,7 +507,7 @@ export const analyzeTopic = async (input: string): Promise<AnalysisReport> => {
       `;
 
       const scoringResponse = await generateWithRetry(() => ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-2.5-pro",
         contents: "Generate the Bayesian Q and U values for all clusters.",
         config: {
           systemInstruction: bayesianSystemPrompt,
@@ -595,7 +595,7 @@ export const chatWithAnalyst = async (context: AnalysisReport, history: {role: s
 
     const response = await generateWithRetry(async () => {
         const chat = ai.chats.create({
-            model: "gemini-2.5-flash",
+            model: "gemini-2.5-pro",
             config: { systemInstruction: contextPrompt },
             history: history
         });
